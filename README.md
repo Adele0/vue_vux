@@ -1,5 +1,5 @@
 # vue_vux
 for WeChat_H5
 
-npm i
-npm run dev
+安装依赖 npm i
+启动项目 npm run dev
