@@ -7,7 +7,7 @@
         <x-button slot="right" type="primary" v-if="isCount" mini>{{countDown}} s</x-button>
       </x-input>
       <x-input placeholder="请输入6位验证码" :max="6" v-model="msgCode"></x-input>
-      <p>&emsp;绑定手机即表示同意 <a href="https://www.baidu.com/">《服务协议》</a></p>
+      <p>&emsp;绑定手机即表示同意 <a href="https://baike.baidu.com/item/%E6%8A%80%E6%9C%AF%E6%9C%8D%E5%8A%A1%E5%90%88%E5%90%8C/9694343?fr=aladdin">《服务协议》</a></p>
       <x-button style="margin-top:1rem" @click.native="login" type="primary" :disabled="canClick">立即登录</x-button>
     </group>
   </div>
@@ -15,6 +15,7 @@
 
 <script>
 import { Group } from 'vux'
+import API from '../api/index'
 
 export default {
   components: {
@@ -74,6 +75,11 @@ export default {
         this.$vux.toast.text('异世界连接失败', 'bottom');
       }
     }
-  }
+  },
+  created() {
+     API.w_login().then(res => {
+      console.log(res)
+    })
+  },
 }
 </script>
